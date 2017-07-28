@@ -45,9 +45,9 @@
     }
   },
   "variables": {
-    "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
+    "hostingPlanName": "[concat('BlueSpatialHostingPlan', uniqueString(resourceGroup().id))]",
     "webSiteName": "[concat('BlueSpatialWeb-', uniqueString(resourceGroup().id))]",
-    "sqlserverName": "[concat('BlueSpatialsqlserver-', uniqueString(resourceGroup().id))]",
+    "sqlserverName": "[concat('bluespatialsqlserver-', uniqueString(resourceGroup().id))]",
     "databaseName": "BlueSpatialdb",
     "repoURL": "https://github.com/BlueSpatial/AzureWeb.git",
     "branch": "master"
