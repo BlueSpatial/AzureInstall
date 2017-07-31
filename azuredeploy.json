@@ -45,7 +45,7 @@
     }
   },
   "variables": {
-    "hostingPlanName": "[concat('BlueSpatialHostingPlan', uniqueString(resourceGroup().id))]",
+    "hostingPlanName": "[concat('BlueSpatialHostingPlan-', uniqueString(resourceGroup().id))]",
     "webSiteName": "[concat('BlueSpatialWeb-', uniqueString(resourceGroup().id))]",
     "sqlserverName": "[concat('bluespatialsqlserver-', uniqueString(resourceGroup().id))]",
     "databaseName": "BlueSpatialDB",
@@ -173,7 +173,8 @@
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]"
+            "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]",
+            "[resourceId('Microsoft.Web/Sites/config', variables('webSiteName'), 'connectionstrings')]"
           ],
           "properties": {
             "RepoUrl": "[variables('repoURL')]",
@@ -396,5 +397,4 @@
       "value": "[reference(concat('Microsoft.Sql/servers/', variables('sqlserverName'))).fullyQualifiedDomainName]"
     }
   }
-
 }
