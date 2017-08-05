@@ -169,12 +169,27 @@
           }
         },
         {
+          "name": "appsettings",
+          "type": "config",
+          "apiVersion": "2015-08-01",
+          "dependsOn": [
+            "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
+          ],
+          "tags": {
+            "displayName": "WebAppSettings"
+          },
+          "properties": {
+            "WEBSITE_DYNAMIC_CACHE": "0"
+          }
+        },
+        {
           "apiVersion": "2015-08-01",
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
             "[resourceId('Microsoft.Web/Sites', variables('webSiteName'))]",
-            "[resourceId('Microsoft.Web/Sites/config', variables('webSiteName'), 'connectionstrings')]"
+            "[resourceId('Microsoft.Web/Sites/config', variables('webSiteName'), 'connectionstrings')]",
+            "[resourceId('Microsoft.Web/Sites/config', variables('webSiteName'), 'appsettings')]"
           ],
           "properties": {
             "RepoUrl": "[variables('repoURL')]",
