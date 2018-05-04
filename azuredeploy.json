@@ -97,7 +97,7 @@
                     },
                   "properties": {
                     "storageKeyType": "Primary",
-                    "storageKey": "Yoi9bubLm9/89KowPl/89EVDfHvgbfIVfHtwdwsYJ1KOWDQR814lz7bwMhTaw+aDCeAQORqaMwzfhgjPW/3bFw==",
+                    "storageKey": "pqTd/CH9aV5eumjtq8eC1rvBXniECeXRjRaSckgYgUYz9o6M1T1qfFXfjP55TbkmUs2tvUbkj04sUKDF6xQOpQ==",
                     "storageUri": "https://bluespatial.blob.core.windows.net/install/BlueSpatialDB.bacpac",
                     "administratorLogin": "[parameters('sqlAdministratorLogin')]",
                     "administratorLoginPassword": "[parameters('sqlAdministratorLoginPassword')]",
