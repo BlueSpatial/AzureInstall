@@ -179,7 +179,8 @@
             "displayName": "WebAppSettings"
           },
           "properties": {
-            "WEBSITE_DYNAMIC_CACHE": "0"
+            "WEBSITE_DYNAMIC_CACHE": "0",
+            "use32BitWorkerProcess": false
           }
         },
         {
