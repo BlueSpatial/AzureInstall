@@ -149,10 +149,20 @@
       },
       "properties": {
         "name": "[variables('webSiteName')]",
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
-        "use32BitWorkerProcess": false
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]"
       },
       "resources": [
+        {
+          "apiVersion": "2016-03-01",
+          "name": "web",
+          "type": "config",
+          "dependsOn": [
+            "[variables('webSiteName')]"
+          ],
+          "properties": {
+            "use32BitWorkerProcess": false
+          }
+        },
         {
           "apiVersion": "2016-03-01",
           "type": "config",
